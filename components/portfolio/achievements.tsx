@@ -30,35 +30,52 @@ export function Achievements() {
           </ul>
         </div>
 
-        <div className="mt-24">
-          <h3 id="certifications-heading" className="font-serif text-3xl text-cream md:text-4xl">
-            {'Certifications & Learning'}
+        <div id="certifications" className="mt-24 scroll-mt-24">
+          <h3 id="certifications-heading" className="font-serif text-3xl text-balance text-cream md:text-4xl">
+            {'Certifications & Professional Development'}
           </h3>
           <ul className="mt-8 grid gap-6 md:grid-cols-2" aria-labelledby="certifications-heading">
             {certifications.map((cert) => (
-              <li key={cert.title} className="group flex items-start gap-5 rounded-2xl border border-border bg-charcoal p-7 transition-colors hover:border-maroon">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-maroon bg-burgundy text-cream">
-                  <BadgeCheck className="size-6" aria-hidden="true" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-lg font-medium text-pretty text-cream">{cert.title}</p>
-                  <p className="mt-1 text-sm text-stone">{cert.organization}</p>
-                  {cert.verifyUrl ? (
-                    <a
-                      href={cert.verifyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm text-cream underline decoration-maroon underline-offset-4 hover:decoration-cream"
-                    >
-                      Verify credential
-                      <ExternalLink className="size-3.5" aria-hidden="true" />
-                    </a>
-                  ) : (
-                    <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-stone/70">
-                      Verification link coming soon
-                    </p>
-                  )}
+              <li
+                key={cert.credentialId}
+                className="flex flex-col rounded-2xl border border-border bg-charcoal p-7 transition-colors hover:border-maroon"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-maroon bg-burgundy/60 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-cream">
+                    <BadgeCheck className="size-3.5" aria-hidden="true" />
+                    {cert.organization}
+                  </span>
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-stone">Certified</span>
                 </div>
+
+                <h4 className="mt-6 font-serif text-2xl leading-tight text-pretty text-cream md:text-3xl">{cert.title}</h4>
+                <p className="mt-1 text-sm text-stone">{`Issued by ${cert.organization}`}</p>
+
+                <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5 font-mono text-xs">
+                  <div>
+                    <dt className="uppercase tracking-widest text-stone/80">Issued</dt>
+                    <dd className="mt-1 text-cream/90">{cert.issued}</dd>
+                  </div>
+                  <div>
+                    <dt className="uppercase tracking-widest text-stone/80">Expires</dt>
+                    <dd className="mt-1 text-cream/90">{cert.expires}</dd>
+                  </div>
+                  <div>
+                    <dt className="uppercase tracking-widest text-stone/80">Credential ID</dt>
+                    <dd className="mt-1 break-all text-cream/90">{cert.credentialId}</dd>
+                  </div>
+                </dl>
+
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-cream/85"
+                >
+                  Show Credential
+                  <ExternalLink className="size-3.5" aria-hidden="true" />
+                  <span className="sr-only">{`for ${cert.title} (opens in a new tab)`}</span>
+                </a>
               </li>
             ))}
           </ul>

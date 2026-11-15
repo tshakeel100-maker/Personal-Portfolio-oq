@@ -9,8 +9,6 @@ export const profile = {
   email: 'tshakeel100@gmail.com',
   github: 'https://github.com/tshakeel100-maker',
   linkedin: 'https://www.linkedin.com/in/tooba-shakeel-',
-  /** Set to a path in /public (e.g. "/images/tooba.jpg") once a photo is added. */
-  photo: null as string | null,
 }
 
 export const navLinks = [
@@ -199,6 +197,36 @@ export const honors = [
 ]
 
 export const certifications = [
-  { title: 'OpenAI Applied AI Foundations', organization: 'OpenAI', verifyUrl: null as string | null },
-  { title: 'OpenAI Agents and Workflows', organization: 'OpenAI', verifyUrl: null as string | null },
+  {
+    title: 'Apply AI at Work Pathway Completion',
+    organization: 'OpenAI',
+    issued: 'October 2026',
+    expires: 'April 2027',
+    credentialId: '196202724',
+    url: 'https://oaiacademy.credential.net/7b01176c-1e62-42f6-b20b-03c8359749c4',
+  },
+  {
+    title: 'Agents and Workflows',
+    organization: 'OpenAI',
+    issued: 'October 2026',
+    expires: 'April 2027',
+    credentialId: '196202246',
+    url: 'https://oaiacademy.credential.net/65d5de3a-4893-433a-a8f6-e4e6d746e85d',
+  },
+  {
+    title: 'Applied AI Foundations',
+    organization: 'OpenAI',
+    issued: 'October 2026',
+    expires: 'April 2027',
+    credentialId: '196201405',
+    url: 'https://oaiacademy.credential.net/d59f268a-aabf-4115-9a43-95de46b27b13',
+  },
+  {
+    title: 'AI Foundations',
+    organization: 'OpenAI',
+    issued: 'October 2026',
+    expires: 'April 2027',
+    credentialId: '196202705',
+    url: 'https://oaiacademy.credential.net/7ca7bc1b-a399-430c-bbfb-5751f3850787#acc.OPrqynGK',
+  },
 ]
