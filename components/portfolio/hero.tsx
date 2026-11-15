@@ -1,4 +1,4 @@
-import { ArrowDownRight, MapPin } from 'lucide-react'
+import { ArrowDownRight } from 'lucide-react'
 import { profile } from '@/lib/portfolio-data'
 import { GitHubIcon, LinkedInIcon } from './brand-icons'
 
@@ -9,8 +9,8 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,#f5efea_1px,transparent_1px),linear-gradient(to_bottom,#f5efea_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_top_right,black_20%,transparent_70%)]"
       />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
-        <div className="order-1">
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-maroon bg-burgundy/60 px-3 py-1 font-mono text-xs text-cream">
             <span className="size-1.5 rounded-full bg-cream" aria-hidden="true" />
             CS @ University of North Texas
@@ -63,41 +63,6 @@ export function Hero() {
                 <span className="sr-only">LinkedIn profile (opens in a new tab)</span>
               </a>
             </div>
-          </div>
-        </div>
-
-        <div className="order-2 w-full">
-          <div className="rounded-2xl border border-maroon bg-gradient-to-br from-burgundy/80 to-charcoal p-6 font-mono text-sm shadow-2xl shadow-ink/60 md:p-8">
-            <div className="mb-6 flex gap-1.5" aria-hidden="true">
-              <span className="size-3 rounded-full bg-maroon" />
-              <span className="size-3 rounded-full bg-stone/40" />
-              <span className="size-3 rounded-full bg-stone/20" />
-            </div>
-            <p className="text-stone">
-              <span className="text-cream">tooba@unt</span>:~$ whoami
-            </p>
-            <p className="mt-2 text-cream/90">{`${profile.degree} · Class of 2029`}</p>
-            <p className="mt-1 flex items-center gap-1.5 text-stone">
-              <MapPin className="size-3.5" aria-hidden="true" />
-              {profile.location}
-            </p>
-
-            <p className="mt-6 text-stone">
-              <span className="text-cream">tooba@unt</span>:~$ cat stats.txt
-            </p>
-            <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1">
-              <dt className="text-stone">gpa</dt>
-              <dd className="text-cream/90">{profile.gpa}</dd>
-              <dt className="text-stone">school</dt>
-              <dd className="text-cream/90">{profile.university}</dd>
-              <dt className="text-stone">focus</dt>
-              <dd className="text-cream/90">Software Engineering · AI</dd>
-            </dl>
-
-            <p className="mt-6 flex items-center text-stone">
-              <span className="text-cream">tooba@unt</span>:~$
-              <span className="ml-2 inline-block h-4 w-2 animate-pulse bg-cream/70 motion-reduce:animate-none" aria-hidden="true" />
-            </p>
           </div>
         </div>
       </div>
